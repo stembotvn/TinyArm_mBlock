@@ -27,7 +27,7 @@
        StrAngle = num1.toString();
        num2 = speed;
        StrSpeed = num2.toString();
-       Str = Str.concat(header,space,arg1,StrAngle,space,arg2,StrAngle,end);
+       Str = Str.concat(header,space,arg1,StrAngle,space,arg2,StrSpeed,end);
        //runPackage(Short2array(header),space,"B",Short2array(StrAngle),space,"V",Short2array(StrSpeed),";");
        bytes = Str.split("");
        for (var i=0;i<bytes.length;++i)
