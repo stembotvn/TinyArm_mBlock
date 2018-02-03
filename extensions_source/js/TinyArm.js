@@ -19,16 +19,17 @@
        var arg1 = "B";
        var arg2 = "V";
        var end = ";";
-       var StrAngle ;
+       var StrAngle ="";
+       var StrSpeed = ""; 
        var num1,num2;
-       var bytes[];
+       var bytes =[];
        num1 = angle;
        StrAngle = num1.toString();
        num2 = speed;
        StrSpeed = num2.toString();
-       Str = String.concat(header,space,arg1,StrAngle,space,arg2,StrAngle,end);
+       Str = Str.concat(header,space,arg1,StrAngle,space,arg2,StrAngle,end);
        //runPackage(Short2array(header),space,"B",Short2array(StrAngle),space,"V",Short2array(StrSpeed),";");
-       bytes = Str.split("");
+       bytes = Str.split();
        device.send(bytes);
      //  runPackage("Hello");
          // runPackage(30,pin,typeof level=="string"?levels[level]:new Number(level));
@@ -81,7 +82,7 @@
             return;
         }
         device.set_receive_handler('TinyArm',processData);
-    };
+    }
 
     ext._deviceRemoved = function(dev) {
         if(device != dev) return;
@@ -97,7 +98,7 @@
         if(!device) return {status: 1, msg: 'Arduino disconnected'};
         if(watchdog) return {status: 1, msg: 'Probing for Arduino'};
         return {status: 2, msg: 'Arduino connected'};
-    }
+    };
 
     var descriptor = {};
 	ScratchExtensions.register('TinyArm', descriptor, ext, {type: 'serial'});
