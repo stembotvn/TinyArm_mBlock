@@ -29,7 +29,11 @@
        StrSpeed = num2.toString();
        Str = Str.concat(header,space,arg1,StrAngle,space,arg2,StrAngle,end);
        //runPackage(Short2array(header),space,"B",Short2array(StrAngle),space,"V",Short2array(StrSpeed),";");
-       bytes = Str.split();
+       bytes = Str.split("");
+       for (var i=0;i<bytes.length;++i)
+       	 {
+       	 	bytes[i]=bytes[i].charCodeAt(0);
+       	 }
        device.send(bytes);
      //  runPackage("Hello");
          // runPackage(30,pin,typeof level=="string"?levels[level]:new Number(level));

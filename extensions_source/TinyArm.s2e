@@ -20,8 +20,9 @@
 			 "loop":""
 			  }],
 		["w",
-		 "Set Base angle: %d Speed: %d","setBase", "90","20", 
-		{ "setup":"",
+		 "Set Base angle: %n Speed: %n","setBase", "90","20", 
+		{"encode":"{d0}{d1}",
+		 "setup":"",
 		  "inc":"",
 		  "def":"",
 		  "work":"Robot.setBase({0},{1});\n",
