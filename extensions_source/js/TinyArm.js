@@ -38,8 +38,127 @@
      //  runPackage("Hello");
          // runPackage(30,pin,typeof level=="string"?levels[level]:new Number(level));
     };
+    ext.setShoulder = function(angle,speed) {
+       
+       var header = "setShoulder";
+       var space = " ";
+       var Str = "";
+       var arg1 = "S";
+       var arg2 = "V";
+       var end = ";";
+       var StrAngle ="";
+       var StrSpeed = ""; 
+       var num1,num2;
+       var bytes =[];
+       num1 = angle;
+       StrAngle = num1.toString();
+       num2 = speed;
+       StrSpeed = num2.toString();
+       Str = Str.concat(header,space,arg1,StrAngle,space,arg2,StrSpeed,end);
+       //runPackage(Short2array(header),space,"B",Short2array(StrAngle),space,"V",Short2array(StrSpeed),";");
+       bytes = Str.split("");
+       for (var i=0;i<bytes.length;++i)
+       	 {
+       	 	bytes[i]=bytes[i].charCodeAt(0);
+       	 }
+       device.send(bytes);
+     //  runPackage("Hello");
+         // runPackage(30,pin,typeof level=="string"?levels[level]:new Number(level));
+    };
+    //////
+    ext.setElbow = function(angle,speed) {
+       
+       var header = "setElbow";
+       var space = " ";
+       var Str = "";
+       var arg1 = "E";
+       var arg2 = "V";
+       var end = ";";
+       var StrAngle ="";
+       var StrSpeed = ""; 
+       var num1,num2;
+       var bytes =[];
+       num1 = angle;
+       StrAngle = num1.toString();
+       num2 = speed;
+       StrSpeed = num2.toString();
+       Str = Str.concat(header,space,arg1,StrAngle,space,arg2,StrSpeed,end);
+       //runPackage(Short2array(header),space,"B",Short2array(StrAngle),space,"V",Short2array(StrSpeed),";");
+       bytes = Str.split("");
+       for (var i=0;i<bytes.length;++i)
+       	 {
+       	 	bytes[i]=bytes[i].charCodeAt(0);
+       	 }
+       device.send(bytes);
+     //  runPackage("Hello");
+         // runPackage(30,pin,typeof level=="string"?levels[level]:new Number(level));
+    };
+  ////
+   ext.setGrip = function(angle,speed) {
+       
+       var header = "setGrip";
+       var space = " ";
+       var Str = "";
+       var arg1 = "G";
+       var arg2 = "V";
+       var end = ";";
+       var StrAngle ="";
+       var StrSpeed = ""; 
+       var num1,num2;
+       var bytes =[];
+       num1 = angle;
+       StrAngle = num1.toString();
+       num2 = speed;
+       StrSpeed = num2.toString();
+       Str = Str.concat(header,space,arg1,StrAngle,space,arg2,StrSpeed,end);
+       //runPackage(Short2array(header),space,"B",Short2array(StrAngle),space,"V",Short2array(StrSpeed),";");
+       bytes = Str.split("");
+       for (var i=0;i<bytes.length;++i)
+       	 {
+       	 	bytes[i]=bytes[i].charCodeAt(0);
+       	 }
+       device.send(bytes);
+     //  runPackage("Hello");
+         // runPackage(30,pin,typeof level=="string"?levels[level]:new Number(level));
+    };
+    ///
+       ext.moveArm = function(angle1,angle2,angle3,angle4,speed) {
+       
+       var header = "moveArm";
+       var space = " ";
+       var Str = "";
+       var arg1 = "B";
+       var arg2 = "S";
+       var arg3 = "E";
+       var arg4 = "G";
+       var arg5 = "V";
 
-
+       var end = ";";
+      
+       var num1,num2,num3,num4,num5;
+       var bytes =[];
+       num1 = angle1;
+       var StrAngle1 = num1.toString();
+       num2 = angle2;
+       var StrAngle2 = num2.toString();
+       num3 = angle3;
+       var StrAngle3 = num3.toString();
+       num4 = angle4;
+       var StrAngle4 = num4.toString();
+       num5 = speed;
+       var StrSpeed = num5.toString();
+       Str = Str.concat(header,space,arg1,StrAngle1,space,arg2,StrAngle2,space,arg3,StrAngle3,space,arg4,StrAngle4,space,arg5,StrSpeed,end);
+       //runPackage(Short2array(header),space,"B",Short2array(StrAngle),space,"V",Short2array(StrSpeed),";");
+       bytes = Str.split("");
+       for (var i=0;i<bytes.length;++i)
+       	 {
+       	 	bytes[i]=bytes[i].charCodeAt(0);
+       	 }
+       device.send(bytes);
+     //  runPackage("Hello");
+         // runPackage(30,pin,typeof level=="string"?levels[level]:new Number(level));
+    };
+    ////////////////////////////////////////////
 	function sendPackage(argList){
 		var bytes = [];
 		for(var i=0;i<argList.length;++i){

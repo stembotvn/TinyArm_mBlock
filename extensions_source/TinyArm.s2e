@@ -10,12 +10,9 @@
 	"tags": "Robot Arm",
 	"blockSpecs": [
 		["h","TinyArm Program","runArduino",
-			{"setup":"Serial.begin(9600);\n
-                      Robot.disable_rc();\n
-                      Robot.init();\n
-                      Robot.begin();\n ",
-			 "inc": "#include <Servo.h>\n #include \"ARMbot.h\"\n" ,
-			 "def":"ARMbot Robot;\n ",
+			{"setup":"",
+			 "inc": "" ,
+			 "def":"",
 			 "work":"",
 			 "loop":""
 			  }],
@@ -25,11 +22,44 @@
 		 "setup":"",
 		  "inc":"",
 		  "def":"",
-		  "work":"Robot.setBase({0},{1});\n",
-		  "loop":""}]  
-		
-		
-		
+		  "work":"",
+		  "loop":""}],
+
+		["w",
+		 "Set Shoulder angle: %n Speed: %n","setShoulder", "90","20", 
+		{"encode":"{d0}{d1}",
+		 "setup":"",
+		  "inc":"",
+		  "def":"",
+		  "work":"",
+		  "loop":""}],
+
+		["w",
+		 "Set Elbow angle: %n Speed: %n","setElbow", "90","20", 
+		{"encode":"{d0}{d1}",
+		 "setup":"",
+		  "inc":"",
+		  "def":"",
+		  "work":"",
+		  "loop":""}],
+
+		["w",
+		 "Set Grip angle: %n Speed: %n","setGrip", "90","20", 
+		{"encode":"{d0}{d1}",
+		 "setup":"",
+		  "inc":"",
+		  "def":"",
+		  "work":"",
+		  "loop":""}],
+
+		  ["w",
+		 "Move Arm- Base: %n Shoulder: %n Elbow: %n Grip: %n Speed: %n","moveArm", "90","90","90","90","20",
+		{"encode":"{d0}{d1}{d2}{d3}{d4}",
+		 "setup":"",
+		  "inc":"",
+		  "def":"",
+		  "work":"",
+		  "loop":""}]
 		
 	],
 	"menus": {
